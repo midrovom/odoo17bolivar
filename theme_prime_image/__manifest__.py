@@ -9,7 +9,7 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            'theme_prime_image/static/src/scss/website_sale_custom.scss',
+            #'theme_prime_image/static/src/scss/website_sale_custom.scss',
         ],
     },
     'installable': True,
