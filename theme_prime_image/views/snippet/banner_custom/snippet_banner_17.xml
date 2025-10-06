@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+  <!-- Registro en el panel de snippets -->
   <template id="s_banner_17_snippet" inherit_id="theme_prime.snippets" name="Banner - 17 Registry">
     <xpath expr="//div[@id='tp_snippet_banner']/div" position="inside">
       <t t-snippet="theme_prime_image.s_banner_17_template"
@@ -18,8 +19,8 @@
         <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <t t-set="brand_attr" t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
-            <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
-              <div class="carousel-item" t-att-class="loop.index == 1 and 'active' or ''">
+            <t t-foreach="brand_attr.value_ids" t-as="brand" t-foreach-index="i" t-key="brand.id">
+              <div class="carousel-item" t-att-class="i == 0 and 'active' or ''">
                 <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
                    class="brand-link d-block">
                   <span class="brand-name"><t t-esc="brand.name"/></span>
