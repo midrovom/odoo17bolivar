@@ -50,13 +50,13 @@
       <!-- 🔹 Estilos embebidos -->
       <style>
         .s_banner_slider {
-          width: 100%;       
-          margin: 0;         
-          padding: 0;       
+          width: 100%;
+          margin: 0;
+          padding: 0;
         }
         .s_banner_slider img {
-          width: 100%;       /* asegura que la imagen se estire al ancho */
-          max-height: 300px; /* ajusta la altura máxima a tu gusto */
+          width: 100%;
+          height: 200px;     /* altura fija */
           object-fit: cover; /* recorta proporcionalmente */
         }
         .s_banner_slider .carousel-indicators {
