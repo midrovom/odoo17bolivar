@@ -3,40 +3,81 @@
   <!-- Snippet Template -->
   <template id="s_banner_16" name="Banner - 16">
     <section class="s_banner_slider o_snippet">
-      <div id="bannerCarousel16" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div id="bannerCarousel16" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
         <div class="carousel-inner">
-          <!-- Primera imagen -->
+          <!-- Slide 1 -->
           <div class="carousel-item active">
-            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner1.jpg"
-                 class="d-block w-100" alt="Banner 1"/>
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner1.jpg" class="d-block w-100" alt="Banner 1"/>
             <div class="carousel-caption d-none d-md-block">
-              <h5>Título editable</h5>
-              <p>Descripción editable</p>
+              <h5>Título 1</h5>
+              <p>Descripción 1</p>
             </div>
           </div>
-          <!-- Segunda imagen -->
+          <!-- Slide 2 -->
           <div class="carousel-item">
-            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner2.jpg"
-                 class="d-block w-100" alt="Banner 2"/>
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner2.jpg" class="d-block w-100" alt="Banner 2"/>
             <div class="carousel-caption d-none d-md-block">
-              <h5>Otro título</h5>
-              <p>Otro texto</p>
+              <h5>Título 2</h5>
+              <p>Descripción 2</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner3.jpg" class="d-block w-100" alt="Banner 3"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Título 3</h5>
+              <p>Descripción 3</p>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner4.jpg" class="d-block w-100" alt="Banner 4"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Título 4</h5>
+              <p>Descripción 4</p>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="carousel-item">
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner5.jpg" class="d-block w-100" alt="Banner 5"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Título 5</h5>
+              <p>Descripción 5</p>
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="carousel-item">
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner6.jpg" class="d-block w-100" alt="Banner 6"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Título 6</h5>
+              <p>Descripción 6</p>
+            </div>
+          </div>
+          <!-- Slide 7 -->
+          <div class="carousel-item">
+            <img src="/theme_prime_image/static/src/img/s_banner_custom/banner7.jpg" class="d-block w-100" alt="Banner 7"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Título 7</h5>
+              <p>Descripción 7</p>
             </div>
           </div>
         </div>
 
-        <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel16" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel16" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="4"></button>
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="5"></button>
+          <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="6"></button>
+        </div>
       </div>
     </section>
   </template>
 
-  <!-- Registro en el panel de snippets (dentro de Banner) -->
+  <!-- Registro en el panel de snippets -->
   <template id="s_banner_16_snippet" inherit_id="theme_prime.snippets" name="Banner - 16 Registry">
     <xpath expr="//div[@id='tp_snippet_banner']/div[@class='o_panel_body']" position="inside">
       <t t-snippet="theme_prime_image.s_banner_16"

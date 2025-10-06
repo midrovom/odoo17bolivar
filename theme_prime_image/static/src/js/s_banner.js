@@ -2,14 +2,10 @@ odoo.define('theme_prime_image.snippets', function (require) {
     'use strict';
 
     var options = require('web_editor.snippets.options');
-    options.registry.BannerSliderOptions = options.Class.extend({
 
-        /**
-         * Permite editar las imágenes del slider
-         * directamente desde el panel de personalización.
-         */
+    options.registry.BannerSliderOptions = options.Class.extend({
         selectImage: options.registry.ImageBlock.extendOptions({
-            selector: '.carousel-item img',   // todas las imágenes dentro del slider
+            selector: '.carousel-item img',
         }),
 
         /**
