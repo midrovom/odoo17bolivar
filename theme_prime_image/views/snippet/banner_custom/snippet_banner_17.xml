@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+  <!-- Registro en el panel de snippets (Banner 17) -->
   <template id="s_banner_17_snippet" inherit_id="theme_prime.snippets" name="Banner - 17 Registry">
     <xpath expr="//div[@id='tp_snippet_banner']/div[@class='o_panel_body']" position="inside">
       <t t-snippet="theme_prime_image.s_banner_17_template"
@@ -24,7 +25,7 @@
         </div>
 
         <!-- Carrusel de 5 en 5 -->
-        <div id="brandsCarousel" class="carousel slide">
+        <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <t t-set="brand_attr"
                t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
@@ -57,23 +58,42 @@
       </div>
 
       <!-- Estilos embebidos -->
+      <!-- Estilos embebidos -->
       <style>
+        /* Fondo general */
+        .s_featured_brands {
+          background-color: #f0f1f2; /* Gris claro como fondo */
+        }
+
         /* Líneas superior e inferior */
         .s_featured_brands .line-top,
         .s_featured_brands .line-bottom {
           border: none;
-          border-top: 2px solid #000;
-          margin: 0;
+          border-top: 1px solid #ccc;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 900px;
         }
+
+        /* Punto amarillo decorativo */
+        .s_featured_brands .title-centered::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+          background-color: #ffd700; /* amarillo */
+          border-radius: 50%;
+          margin: 0 auto 8px auto;
+        }
+
+        /* Título centrado */
         .s_featured_brands .title-centered {
-          position: relative;
-          display: inline-block;
-          background: #fff;
-          padding: 0 20px;
-          margin-top: -14px; /* se superpone a la línea superior */
-          font-weight: bold;
-          font-size: 1.5rem;
+          font-weight: 600;
+          font-size: 1.25rem;
+          color: #555;
+          margin: 10px 0;
         }
+
         .s_featured_brands .line-bottom {
           margin-top: 10px;
         }
@@ -81,20 +101,33 @@
         /* Estilo de marcas */
         .s_featured_brands .brand-name {
           color: #888; /* gris por defecto */
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           font-weight: 600;
           transition: all 0.3s ease;
           display: inline-block;
           padding: 8px 16px;
         }
+
         .s_featured_brands .brand-link:hover .brand-name {
           color: #28a745; /* verde al pasar el mouse */
           text-decoration: underline;
         }
+
+        /* Alineación en el carrusel */
         .s_featured_brands .carousel-item {
-          padding: 15px 0;
+          padding: 20px 0;
+        }
+
+        .s_featured_brands .carousel-item .row {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .s_featured_brands .carousel-item .col {
+          flex: 0 0 auto;
         }
       </style>
-    </section>
   </template>
 </odoo>
