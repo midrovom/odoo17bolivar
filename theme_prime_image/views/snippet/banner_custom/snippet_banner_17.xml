@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <!-- Registro en el panel de snippets (Banner 17) -->
   <template id="s_banner_17_snippet" inherit_id="theme_prime.snippets" name="Banner - 17 Registry">
     <xpath expr="//div[@id='tp_snippet_banner']/div[@class='o_panel_body']" position="inside">
       <t t-snippet="theme_prime_image.s_banner_17_template"
@@ -18,82 +17,60 @@
       <div class="container text-center">
 
         <!-- Franja superior con texto centrado -->
-        <div class="position-relative mb-4">
-          <hr class="line-top"/>
-          <h3 class="title-centered">Marcas destacadas</h3>
-          <hr class="line-bottom"/>
+        <div class="franja mb-4">
+          <hr class="linea"/>
+          <h3 class="titulo">Marcas destacadas</h3>
+          <hr class="linea"/>
         </div>
 
-        <!-- Carrusel de 5 en 5 -->
-        <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-          <div class="carousel-inner">
-            <t t-set="brand_attr"
-               t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
-            <t t-set="chunk_size" t-value="5"/>
-            <t t-set="brands" t-value="brand_attr.value_ids"/>
-            <t t-foreach="range(0, len(brands), chunk_size)" t-as="start" t-foreach-index="i">
-              <div class="carousel-item" t-att-class="i == 0 and 'active' or ''">
-                <div class="row justify-content-center">
-                  <t t-foreach="brands[start:start+chunk_size]" t-as="brand" t-key="brand.id">
-                    <div class="col text-center">
-                      <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
-                         class="brand-link d-block">
-                        <span class="brand-name"><t t-esc="brand.name"/></span>
-                      </a>
-                    </div>
-                  </t>
-                </div>
-              </div>
-            </t>
-          </div>
-
-          <!-- Controles -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#brandsCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#brandsCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
+        <!-- Todas las marcas en una sola fila -->
+        <div class="brands-row d-flex flex-wrap justify-content-center">
+          <t t-set="brand_attr"
+             t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
+          <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
+            <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
+               class="brand-link mx-2 my-2">
+              <span class="brand-name"><t t-esc="brand.name"/></span>
+            </a>
+          </t>
         </div>
+
+        <!-- Línea inferior completa -->
+        <hr class="linea mt-4"/>
       </div>
 
       <!-- Estilos embebidos -->
       <style>
         /* Líneas superior e inferior */
-        .s_featured_brands .line-top,
-        .s_featured_brands .line-bottom {
+        .s_featured_brands .linea {
           border: none;
           border-top: 2px solid #000;
           margin: 0;
         }
-        .s_featured_brands .title-centered {
-          position: relative;
-          display: inline-block;
-          background: #fff;
-          padding: 0 20px;
-          margin-top: -14px; /* se superpone a la línea superior */
+        .s_featured_brands .titulo {
           font-weight: bold;
           font-size: 1.5rem;
-        }
-        .s_featured_brands .line-bottom {
-          margin-top: 10px;
+          margin: -18px auto 10px auto;
+          background: #fff;
+          display: inline-block;
+          padding: 0 20px;
+          position: relative;
+          z-index: 1;
         }
 
         /* Estilo de marcas */
+        .s_featured_brands .brands-row {
+          margin-top: 20px;
+        }
         .s_featured_brands .brand-name {
           color: #888; /* gris por defecto */
           font-size: 1.2rem;
           font-weight: 600;
           transition: all 0.3s ease;
-          display: inline-block;
-          padding: 8px 16px;
         }
         .s_featured_brands .brand-link:hover .brand-name {
           color: #28a745; /* verde al pasar el mouse */
           text-decoration: underline;
-        }
-        .s_featured_brands .carousel-item {
-          padding: 15px 0;
         }
       </style>
     </section>
