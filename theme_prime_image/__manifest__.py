@@ -6,12 +6,11 @@
     'depends': ['theme_prime'],
     'data': [
         'views/theme_shop_layout_views.xml',
-        'views/snippet/banner_custom/snippet_banner_16.xml'
+        'views/snippet/banner_custom/snippet_banner_16.xml',
     ],
     'assets': {
         'web.assets_frontend': [
             'theme_prime_image/static/src/js/s_banner.js',
-            'theme_prime_image/static/src/scss/banner_custom.scss',
         ],
     },
     'installable': True,

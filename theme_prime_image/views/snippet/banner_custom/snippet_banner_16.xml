@@ -3,9 +3,6 @@
   <!-- Snippet Template -->
   <template id="s_banner_16" name="Banner - 16">
     <section class="s_banner_slider o_snippet">
-      <!-- 🔹 Llamada a los estilos SCSS -->
-      <t t-call-assets="web.assets_frontend" t-js="false"/>
-
       <div id="bannerCarousel16" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
         <div class="carousel-inner">
           <!-- Slide 1 -->
@@ -77,6 +74,38 @@
           <button type="button" data-bs-target="#bannerCarousel16" data-bs-slide-to="6"></button>
         </div>
       </div>
+
+      <!-- 🔹 Estilos embebidos -->
+      <style>
+        .s_banner_slider {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .s_banner_slider img {
+          max-height: 400px;
+          object-fit: cover;
+        }
+        .s_banner_slider .carousel-indicators {
+          bottom: 15px;
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+        }
+        .s_banner_slider .carousel-indicators button {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: #fff;
+          opacity: 0.6;
+          border: none;
+          transition: opacity 0.3s, transform 0.3s;
+        }
+        .s_banner_slider .carousel-indicators .active {
+          opacity: 1;
+          background-color: #007bff;
+          transform: scale(1.2);
+        }
+      </style>
     </section>
   </template>
 
