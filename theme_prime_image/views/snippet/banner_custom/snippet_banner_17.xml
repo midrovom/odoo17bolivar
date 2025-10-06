@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="s_banner_17_snippet" inherit_id="theme_prime.snippets" name="Banner - 17 Registry">
+    <xpath expr="//div[@id='tp_snippet_banner']/div" position="inside">
+      <t t-snippet="theme_prime_image.s_banner_17_template"
+         t-thumbnail="/theme_prime_image/static/src/img/snippets/brands_thumb.png"/>
+    </xpath>
+  </template>
+
+  <!-- Plantilla del Banner 17 -->
+  <template id="s_banner_17_template" name="Banner - 17 (Marcas destacadas)">
+    <section class="s_banner_17 s_featured_brands py-5 o_snippet">
+      <div class="container text-center">
+        <!-- Título -->
+        <h3 class="mb-4">------------ Marcas destacadas ------------</h3>
+
+        <!-- Carrusel -->
+        <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <t t-set="brand_attr" t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
+            <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
+              <div class="carousel-item" t-att-class="loop.index == 1 and 'active' or ''">
+                <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
+                   class="brand-link d-block">
+                  <span class="brand-name"><t t-esc="brand.name"/></span>
+                </a>
+              </div>
+            </t>
+          </div>
+
+          <!-- Controles -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#brandsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#brandsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Estilos embebidos -->
+      <style>
+        .s_featured_brands .brand-name {
+          color: #888; /* gris por defecto */
+          font-size: 1.2rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+        .s_featured_brands .brand-link:hover .brand-name {
+          color: #28a745; /* verde al pasar el mouse */
+          text-decoration: underline;
+        }
+        .s_featured_brands .carousel-item {
+          padding: 10px;
+        }
+      </style>
+    </section>
+  </template>
+</odoo>
