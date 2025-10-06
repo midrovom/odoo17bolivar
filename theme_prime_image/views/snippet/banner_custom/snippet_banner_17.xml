@@ -20,7 +20,6 @@
         <div class="franja mb-4">
           <hr class="linea"/>
           <h3 class="titulo">Marcas destacadas</h3>
-          <hr class="linea"/>
         </div>
 
         <!-- Todas las marcas en una sola fila -->
@@ -41,7 +40,7 @@
 
       <!-- Estilos embebidos -->
       <style>
-        /* Líneas superior e inferior */
+        /* Línea superior e inferior */
         .s_featured_brands .linea {
           border: none;
           border-top: 2px solid #000;
@@ -50,11 +49,12 @@
         .s_featured_brands .titulo {
           font-weight: bold;
           font-size: 1.5rem;
-          margin: -18px auto 10px auto;
+          margin: -18px auto 0 auto;
           background: #fff;
           display: inline-block;
           padding: 0 20px;
           position: relative;
+          top: -22px; /* se superpone a la línea */
           z-index: 1;
         }
 
