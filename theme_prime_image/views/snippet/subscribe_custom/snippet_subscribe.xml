@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template id="s_subscribe_2_inherit" inherit_id="website.s_subscribe_2" name="Subscribe 2 - Solo mover título">
+  <template id="s_subscribe_2_inherit" inherit_id="theme_prime.s_subscribe_2" name="Subscribe 2 - Solo mover título">
     <xpath expr="//div[@class='col-md-8 align-self-center']" position="replace"/>
     
     <!-- 2. Insertar el título arriba del formulario -->
