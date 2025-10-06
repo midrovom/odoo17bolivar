@@ -1,11 +1,11 @@
 /*Banner 16*/
 .s_banner_slider {
-  max-width: 900px;   // ancho máximo del slider
-  margin: 0 auto;     // centrarlo en la página
+  max-width: 900px;
+  margin: 0 auto;
 
   img {
-    max-height: 400px;   // altura máxima de las imágenes
-    object-fit: cover;   // recorta sin deformar
+    max-height: 400px;
+    object-fit: cover;
   }
 
   .carousel-indicators {
@@ -17,7 +17,7 @@
     button {
       width: 12px;
       height: 12px;
-      border-radius: 50%;        //  círculos
+      border-radius: 50%;   // 🔵 círculos
       background-color: #fff;
       opacity: 0.6;
       border: none;
@@ -26,7 +26,7 @@
 
     .active {
       opacity: 1;
-      background-color: #007bff; // color activo
+      background-color: #007bff;
       transform: scale(1.2);
     }
   }

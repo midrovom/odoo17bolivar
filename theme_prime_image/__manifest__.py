@@ -11,7 +11,7 @@
     'assets': {
         'web.assets_frontend': [
             'theme_prime_image/static/src/js/s_banner.js',
-            'theme_prime_image/static/src/scss/snippets_banner.scss',
+            'theme_prime_image/static/src/scss/banner_custom.scss',
         ],
     },
     'installable': True,

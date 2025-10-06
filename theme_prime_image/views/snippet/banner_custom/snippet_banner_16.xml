@@ -3,6 +3,9 @@
   <!-- Snippet Template -->
   <template id="s_banner_16" name="Banner - 16">
     <section class="s_banner_slider o_snippet">
+      <!-- 🔹 Llamada a los estilos SCSS -->
+      <t t-call-assets="web.assets_frontend" t-js="false"/>
+
       <div id="bannerCarousel16" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
         <div class="carousel-inner">
           <!-- Slide 1 -->
