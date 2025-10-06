@@ -8,44 +8,30 @@
           <!-- Slide 1 -->
           <div class="carousel-item active">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner1.jpg" class="d-block w-100" alt="Banner 1"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
           <!-- Slide 2 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner2.jpg" class="d-block w-100" alt="Banner 2"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
           <!-- Slide 3 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner3.jpg" class="d-block w-100" alt="Banner 3"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
           <!-- Slide 4 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner4.jpg" class="d-block w-100" alt="Banner 4"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
           <!-- Slide 5 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner5.jpg" class="d-block w-100" alt="Banner 5"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
           <!-- Slide 6 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner6.jpg" class="d-block w-100" alt="Banner 6"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
           <!-- Slide 7 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner7.jpg" class="d-block w-100" alt="Banner 7"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
           </div>
         </div>
 
@@ -64,12 +50,14 @@
       <!-- 🔹 Estilos embebidos -->
       <style>
         .s_banner_slider {
-          max-width: 900px;
-          margin: 0 auto;
+          width: 100%;       /* ocupa todo el ancho */
+          margin: 0;         /* sin márgenes */
+          padding: 0;        /* sin padding extra */
         }
         .s_banner_slider img {
-          max-height: 400px;
-          object-fit: cover;
+          width: 100%;       /* asegura que la imagen se estire al ancho */
+          max-height: 500px; /* ajusta la altura máxima a tu gusto */
+          object-fit: cover; /* recorta proporcionalmente */
         }
         .s_banner_slider .carousel-indicators {
           bottom: 15px;
