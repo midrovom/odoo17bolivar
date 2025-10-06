@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+  <!-- Registro en el panel de snippets (Banner 17) -->
   <template id="s_banner_17_snippet" inherit_id="theme_prime.snippets" name="Banner - 17 Registry">
     <xpath expr="//div[@id='tp_snippet_banner']/div[@class='o_panel_body']" position="inside">
       <t t-snippet="theme_prime_image.s_banner_17_template"
@@ -13,28 +14,28 @@
 
   <!-- Plantilla del Banner 17 (Marcas destacadas) -->
   <template id="s_banner_17_template" name="Banner - 17 (Marcas destacadas)">
-    <section class="s_banner_17 s_featured_brands py-5 o_snippet">
+    <section class="s_banner_17 s_featured_brands o_snippet">
       <div class="container text-center">
 
         <!-- Línea con texto centrado -->
-        <div class="linea-con-texto mb-4">
+        <div class="linea-con-texto mb-3">
           <span class="texto">Marcas destacadas</span>
         </div>
 
-        <!-- Todas las marcas en una sola fila -->
-        <div class="brands-row d-flex flex-wrap justify-content-center">
+        <!-- Todas las marcas alineadas en ancho completo -->
+        <div class="brands-row d-flex flex-wrap justify-content-between align-items-center">
           <t t-set="brand_attr"
              t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
           <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
             <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
-               class="brand-link mx-3 my-2">
+               class="brand-link">
               <span class="brand-name"><t t-esc="brand.name"/></span>
             </a>
           </t>
         </div>
 
         <!-- Línea inferior completa -->
-        <hr class="linea mt-4"/>
+        <hr class="linea mt-3"/>
       </div>
 
       <!-- Estilos embebidos -->
@@ -44,7 +45,7 @@
           border-top: 2px solid #000;
           text-align: center;
           position: relative;
-          margin: 20px 0;
+          margin: 10px 0;
         }
         .s_featured_brands .linea-con-texto .texto {
           position: relative;
@@ -52,7 +53,7 @@
           background: #fff;
           padding: 0 20px;
           font-weight: bold;
-          font-size: 1.5rem;
+          font-size: 1.3rem;
         }
 
         /* Línea inferior */
@@ -63,19 +64,21 @@
 
         /* Estilo de marcas */
         .s_featured_brands .brands-row {
-          margin-top: 30px; /* más espacio entre título y marcas */
+          margin: 15px 0; /* menos altura */
         }
         .s_featured_brands .brand-link {
-          margin: 0 20px; /* más espacio horizontal entre marcas */
+          flex: 1; /* que ocupen todo el ancho disponible */
+          text-align: center;
+          margin: 5px 0;
         }
         .s_featured_brands .brand-name {
-          color: #888; /* gris por defecto */
-          font-size: 1.3rem;
+          color: #555;
+          font-size: 1.1rem;
           font-weight: 600;
           transition: all 0.3s ease;
         }
         .s_featured_brands .brand-link:hover .brand-name {
-          color: #28a745; /* verde al pasar el mouse */
+          color: #28a745;
           text-decoration: underline;
         }
       </style>
