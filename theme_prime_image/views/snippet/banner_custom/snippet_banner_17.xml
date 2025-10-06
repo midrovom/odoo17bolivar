@@ -16,10 +16,9 @@
     <section class="s_banner_17 s_featured_brands py-5 o_snippet">
       <div class="container text-center">
 
-        <!-- Franja superior con texto centrado -->
-        <div class="franja mb-4">
-          <hr class="linea"/>
-          <h3 class="titulo">Marcas destacadas</h3>
+        <!-- Línea con texto centrado -->
+        <div class="linea-con-texto mb-4">
+          <span class="texto">Marcas destacadas</span>
         </div>
 
         <!-- Todas las marcas en una sola fila -->
@@ -28,7 +27,7 @@
              t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
           <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
             <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
-               class="brand-link mx-2 my-2">
+               class="brand-link mx-3 my-2">
               <span class="brand-name"><t t-esc="brand.name"/></span>
             </a>
           </t>
@@ -40,31 +39,38 @@
 
       <!-- Estilos embebidos -->
       <style>
-        /* Línea superior e inferior */
+        /* Línea con texto centrado */
+        .s_featured_brands .linea-con-texto {
+          border-top: 2px solid #000;
+          text-align: center;
+          position: relative;
+          margin: 20px 0;
+        }
+        .s_featured_brands .linea-con-texto .texto {
+          position: relative;
+          top: -14px;
+          background: #fff;
+          padding: 0 20px;
+          font-weight: bold;
+          font-size: 1.5rem;
+        }
+
+        /* Línea inferior */
         .s_featured_brands .linea {
           border: none;
           border-top: 2px solid #000;
-          margin: 0;
-        }
-        .s_featured_brands .titulo {
-          font-weight: bold;
-          font-size: 1.5rem;
-          margin: -18px auto 0 auto;
-          background: #fff;
-          display: inline-block;
-          padding: 0 20px;
-          position: relative;
-          top: -22px; /* se superpone a la línea */
-          z-index: 1;
         }
 
         /* Estilo de marcas */
         .s_featured_brands .brands-row {
-          margin-top: 20px;
+          margin-top: 30px; /* más espacio entre título y marcas */
+        }
+        .s_featured_brands .brand-link {
+          margin: 0 20px; /* más espacio horizontal entre marcas */
         }
         .s_featured_brands .brand-name {
           color: #888; /* gris por defecto */
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           font-weight: 600;
           transition: all 0.3s ease;
         }
