@@ -7,7 +7,7 @@
     'data': [
         'views/theme_shop_layout_views.xml',
         'views/snippet/banner_custom/snippet_banner_16.xml',
-        'views/snippet/header_custom/snippet_header.xml',
+        #'views/snippet/header_custom/snippet_header.xml',
     ],
     'assets': {
         'web.assets_frontend': [
