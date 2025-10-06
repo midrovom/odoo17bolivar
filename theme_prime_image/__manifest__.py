@@ -13,6 +13,7 @@
     'assets': {
         'web.assets_frontend': [
             'theme_prime_image/static/src/js/s_banner.js',
+            'theme_prime_image/static/src/js/s_banner_17.js'
         ],
     },
     'installable': True,
