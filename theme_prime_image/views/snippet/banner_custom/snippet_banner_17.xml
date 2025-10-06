@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <!-- Estilos embebidos -->
+      
       <style>
         .s_featured_brands .brand-name {
           color: #888; /* gris por defecto */
