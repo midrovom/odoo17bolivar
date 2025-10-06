@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <!-- Registro en el panel de snippets -->
   <template id="header_custom_9_option" inherit_id="theme_prime.snippets" name="Header Style 9 Option">
-    <xpath expr="//we-select[@data-variable='header-template']/we-button[last()]" position="after">
+    <xpath expr="//we-select[@data-variable='header-template']" position="inside">
       <we-button 
         title="Prime Header Style - 9"
         data-name="tp_header_style_9_opt"
@@ -12,7 +11,7 @@
     </xpath>
   </template>
 
-
+  <!-- Plantilla del header -->
   <template id="template_header_style_9" name="Header Style 9 - Personalizado">
     <header class="o_header_custom_9 o_snippet">
       <div class="container-fluid">
@@ -97,4 +96,3 @@
     </header>
   </template>
 </odoo>
-
