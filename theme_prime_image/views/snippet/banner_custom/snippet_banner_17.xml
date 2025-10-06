@@ -23,12 +23,22 @@
           <div class="carousel-inner">
             <t t-set="brand_attr"
                t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
-            <t t-foreach="brand_attr.value_ids" t-as="brand" t-foreach-index="i" t-key="brand.id">
+
+            <!-- Agrupamos las marcas de 6 en 6 -->
+            <t t-set="chunk_size" t-value="6"/>
+            <t t-set="brands" t-value="brand_attr.value_ids"/>
+            <t t-foreach="range(0, len(brands), chunk_size)" t-as="start" t-foreach-index="i">
               <div class="carousel-item" t-att-class="i == 0 and 'active' or ''">
-                <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
-                   class="brand-link d-block">
-                  <span class="brand-name"><t t-esc="brand.name"/></span>
-                </a>
+                <div class="row justify-content-center">
+                  <t t-foreach="brands[start:start+chunk_size]" t-as="brand" t-key="brand.id">
+                    <div class="col-6 col-md-2 mb-3">
+                      <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
+                         class="brand-link d-block">
+                        <span class="brand-name"><t t-esc="brand.name"/></span>
+                      </a>
+                    </div>
+                  </t>
+                </div>
               </div>
             </t>
           </div>
@@ -47,16 +57,21 @@
       <style>
         .s_featured_brands .brand-name {
           color: #888; /* gris por defecto */
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           font-weight: 600;
           transition: all 0.3s ease;
+          display: inline-block;
+          padding: 8px 12px;
+          border: 1px solid transparent;
+          border-radius: 4px;
         }
         .s_featured_brands .brand-link:hover .brand-name {
           color: #28a745; /* verde al pasar el mouse */
-          text-decoration: underline;
+          border-color: #28a745;
+          background-color: #f8f9fa;
         }
         .s_featured_brands .carousel-item {
-          padding: 10px;
+          padding: 15px 0;
         }
       </style>
     </section>
