@@ -5,31 +5,24 @@
     <section class="s_banner_slider o_snippet">
       <div id="bannerCarousel16" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
         <div class="carousel-inner">
-          <!-- Slide 1 -->
           <div class="carousel-item active">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner1.jpg" class="d-block w-100" alt="Banner 1"/>
           </div>
-          <!-- Slide 2 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner2.jpg" class="d-block w-100" alt="Banner 2"/>
           </div>
-          <!-- Slide 3 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner3.jpg" class="d-block w-100" alt="Banner 3"/>
           </div>
-          <!-- Slide 4 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner4.jpg" class="d-block w-100" alt="Banner 4"/>
           </div>
-          <!-- Slide 5 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner5.jpg" class="d-block w-100" alt="Banner 5"/>
           </div>
-          <!-- Slide 6 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner6.jpg" class="d-block w-100" alt="Banner 6"/>
           </div>
-          <!-- Slide 7 -->
           <div class="carousel-item">
             <img src="/theme_prime_image/static/src/img/s_banner_custom/banner7.jpg" class="d-block w-100" alt="Banner 7"/>
           </div>
@@ -47,7 +40,6 @@
         </div>
       </div>
 
-      <!-- 🔹 Estilos embebidos -->
       <style>
         .s_banner_slider {
           width: 100%;
