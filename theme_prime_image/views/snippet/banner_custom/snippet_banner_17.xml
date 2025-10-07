@@ -56,12 +56,16 @@
 
         /* Estilo de marcas */
         .s_featured_brands .brands-row {
-          margin: 15px 0; /* menos altura */
+          margin: 15px 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
         .s_featured_brands .brand-link {
-          flex: 1; /* que ocupen todo el ancho disponible */
+          flex: 1;
           text-align: center;
-          margin: 5px 0;
+          margin: 5px 10px;
+          min-width: 120px;
         }
         .s_featured_brands .brand-name {
           color: #555;
@@ -72,6 +76,27 @@
         .s_featured_brands .brand-link:hover .brand-name {
           color: #28a745;
           text-decoration: underline;
+        }
+
+        /*  Responsivo */
+        @media (max-width: 768px) {
+          .s_featured_brands .brands-row {
+            justify-content: center;
+          }
+          .s_featured_brands .brand-link {
+            flex: 0 0 45%; /* dos columnas */
+            margin: 8px 5px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .s_featured_brands .brand-link {
+            flex: 0 0 100%; /* una columna */
+            margin: 6px 0;
+          }
+          .s_featured_brands .brand-name {
+            font-size: 1rem;
+          }
         }
       </style>
     </section>
