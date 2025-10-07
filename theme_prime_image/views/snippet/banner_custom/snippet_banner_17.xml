@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+  <!-- Registro del snippet -->
   <template id="s_banner_17_snippet" inherit_id="theme_prime.snippets" name="Banner - 17 Registry">
     <xpath expr="//div[@id='tp_snippet_banner']/div[@class='o_panel_body']" position="inside">
       <t t-snippet="theme_prime_image.s_banner_17_template"
@@ -11,16 +12,36 @@
     </xpath>
   </template>
 
+  <!-- Template principal -->
   <template id="s_banner_17_template" name="Banner - 17 (Marcas destacadas)">
     <section class="s_banner_17 s_featured_brands o_snippet">
       <div class="container text-center">
         <div class="linea-con-texto mb-3">
           <span class="texto">Marcas destacadas</span>
         </div>
-        
-        <div class="brands-row d-flex flex-wrap justify-content-between align-items-center">
-          <t t-set="brand_attr"
-            t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
+
+        <!-- Slider en móvil -->
+        <div class="swiper-container d-md-none">
+          <div class="swiper-wrapper">
+            <t t-set="brand_attr"
+              t-value="request.env['product.attribute'].sudo().search([('name','=','Marca')], limit=1)"/>
+            <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
+              <div class="swiper-slide">
+                <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
+                  class="brand-link">
+                  <span class="brand-name"><t t-esc="brand.name"/></span>
+                </a>
+              </div>
+            </t>
+          </div>
+          <!-- Controles -->
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- Vista normal en desktop -->
+        <div class="brands-row d-none d-md-flex flex-wrap justify-content-between align-items-center">
           <t t-foreach="brand_attr.value_ids" t-as="brand" t-key="brand.id">
             <a t-att-href="'/shop?attrib=%s-%s' % (brand.attribute_id.id, brand.id)"
               class="brand-link">
@@ -28,6 +49,7 @@
             </a>
           </t>
         </div>
+
         <hr class="linea mt-3"/>
       </div>
 
@@ -56,10 +78,10 @@
 
         /* Estilo de marcas */
         .s_featured_brands .brands-row {
-          margin: 15px 0; /* menos altura */
+          margin: 15px 0;
         }
         .s_featured_brands .brand-link {
-          flex: 1; /* que ocupen todo el ancho disponible */
+          flex: 1;
           text-align: center;
           margin: 5px 0;
         }
@@ -72,6 +94,17 @@
         .s_featured_brands .brand-link:hover .brand-name {
           color: #28a745;
           text-decoration: underline;
+        }
+
+        /* Slider en móvil */
+        .swiper-container {
+          width: 100%;
+          padding: 10px 0;
+        }
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       </style>
     </section>
